@@ -1,0 +1,17 @@
+{
+  "name": "incident-desk",
+  "version": "1.0.0",
+  "description": "Small full-stack incident tracker with live MTTR stats (Node, Express, SQLite, vanilla JS)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.19.2"
+  }
+}

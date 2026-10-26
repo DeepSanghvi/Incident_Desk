@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Incident Desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Incident Desk</h1>
+      <dl id="stats" aria-live="polite"></dl>
+    </header>
+
+    <form id="new-incident">
+      <label>Title <input name="title" maxlength="120" required placeholder="What is broken?"></label>
+      <label>Service <input name="service" maxlength="60" required placeholder="billing-api"></label>
+      <label>Severity
+        <select name="severity">
+          <option value="1">1 Critical</option>
+          <option value="2">2 Major</option>
+          <option value="3" selected>3 Minor</option>
+          <option value="4">4 Low</option>
+        </select>
+      </label>
+      <button type="submit">Log incident</button>
+    </form>
+    <p id="error" role="alert"></p>
+
+    <table>
+      <thead><tr><th>Sev</th><th>Incident</th><th>Service</th><th>Age</th><th>Status</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" hidden>No incidents logged. Use the form above to log the first one.</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
